@@ -32,14 +32,16 @@ import {
   checkBackendHealth,
 } from "../services/api";
 
+import defaultActivities from "../data/activities.json";
+
 export default function Home() {
-  // Master data
-  const [activities, setActivities] = useState<MasterActivity[]>([]);
+  // Master data: pre-populate all 56 official sectors immediately
+  const [activities, setActivities] = useState<MasterActivity[]>(defaultActivities);
   const [subActivities, setSubActivities] = useState<MasterSubActivity[]>([]);
 
   // Form State
   const [selectedActivityName, setSelectedActivityName] = useState<string>("Airports");
-  const [selectedActivityId, setSelectedActivityId] = useState<number | undefined>(4);
+  const [selectedActivityId, setSelectedActivityId] = useState<number | undefined>(29);
   const [selectedSubActivityName, setSelectedSubActivityName] = useState<string>("Airports (all categories)");
   const [capacity, setCapacity] = useState<string>("250");
   const [capacityUnit, setCapacityUnit] = useState<string>("sqmtr");
@@ -68,13 +70,8 @@ export default function Home() {
       if (health.cache_driver) setCacheDriver(health.cache_driver);
 
       const acts = await fetchMasterActivities();
-      setActivities(acts);
-      if (acts.length > 0) {
-        const first = acts[0];
-        const name = first.name || first.activity_name || "Airports";
-        const id = first.id || first.activity_id;
-        setSelectedActivityName(name);
-        setSelectedActivityId(id);
+      if (acts && acts.length > 0) {
+        setActivities(acts);
       }
     }
     init();
@@ -104,7 +101,7 @@ export default function Home() {
     const actName = e.target.value;
     setSelectedActivityName(actName);
     const found = activities.find(
-      (a) => (a.name || a.activity_name) === actName
+      (a) => (a.name || a.activity_name)?.trim().toLowerCase() === actName.trim().toLowerCase()
     );
     setSelectedActivityId(found?.id || found?.activity_id);
   };

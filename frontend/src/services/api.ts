@@ -1,7 +1,7 @@
 /**
  * api.ts
  * ------
- * Client service to interface with FastAPI backend (Cloud Run, ECS, or local dev).
+ * Client service to interface with FastAPI backend (Render, Cloud Run, ECS, or local dev).
  */
 
 import {
@@ -10,6 +10,7 @@ import {
   ClearanceRequestPayload,
   ClearanceResponse,
 } from "../types/clearance";
+import defaultActivities from "../data/activities.json";
 
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
@@ -24,23 +25,14 @@ export async function fetchMasterActivities(): Promise<MasterActivity[]> {
     if (!res.ok) {
       throw new Error(`Failed to fetch activities: HTTP ${res.status}`);
     }
-    return await res.json();
+    const data = await res.json();
+    if (Array.isArray(data) && data.length > 0) {
+      return data;
+    }
   } catch (err) {
-    console.warn("FastAPI activities request failed:", err);
-    // Fallback to essential sectors if backend is not yet started
-    return [
-      { id: 4, name: "Airports" },
-      { id: 52, name: "Aerial Ropeways" },
-      { id: 18, name: "Building and Construction projects" },
-      { id: 25, name: "Coal Washeries" },
-      { id: 31, name: "Distilleries" },
-      { id: 45, name: "Highways" },
-      { id: 58, name: "Mining of Minerals" },
-      { id: 62, name: "Oil and Gas Transportation Pipeline" },
-      { id: 74, name: "Ports, Harbours, Break waters, Dredging" },
-      { id: 89, name: "Thermal Power Plants" },
-    ];
+    console.warn("FastAPI activities request failed, using complete 56-sector catalog:", err);
   }
+  return defaultActivities;
 }
 
 export async function fetchSubActivities(
