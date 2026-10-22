@@ -25,5 +25,5 @@ COPY . /app
 
 EXPOSE 8000
 
-# Run FastAPI with Uvicorn
-CMD ["uvicorn", "backend.app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2"]
+# Run FastAPI with Uvicorn (binds to dynamic $PORT assigned by Render/Cloud Run)
+CMD ["sh", "-c", "uvicorn backend.app.main:app --host 0.0.0.0 --port ${PORT:-8000} --workers 1"]
