@@ -1,0 +1,2196 @@
+{
+  "by_subactivity": {
+    "186": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "99": [
+      {
+        "unit": "Km",
+        "param": "Length of air strip"
+      }
+    ],
+    "98": [
+      {
+        "unit": "Passengers PA",
+        "param": "Handling Capacity"
+      }
+    ],
+    "142": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area of Hospital part"
+      }
+    ],
+    "108": [
+      {
+        "unit": "TPA",
+        "param": "Treatment Capacity"
+      }
+    ],
+    "164": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "197": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "48": [
+      {
+        "unit": "TPA",
+        "param": "Milling/ Production Capacity"
+      }
+    ],
+    "138": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "136": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "196": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "100": [
+      {
+        "unit": "Km",
+        "param": "Length of air strip"
+      }
+    ],
+    "199": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "141": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "139": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "137": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "144": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "135": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "140": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "198": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "143": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up area of both College Hostel Hospital etc"
+      }
+    ],
+    "155": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "150": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "42": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "63": [
+      {
+        "unit": "TPA",
+        "param": "Fortification capacity"
+      }
+    ],
+    "44": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "62": [
+      {
+        "unit": "TPA",
+        "param": "Fortification capacity"
+      }
+    ],
+    "61": [
+      {
+        "unit": "TPA",
+        "param": "Granulation capacity"
+      }
+    ],
+    "58": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "57": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "43": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "60": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "59": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "49": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "51": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "50": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "28": [
+      {
+        "unit": "MTPA",
+        "param": "Throughput"
+      }
+    ],
+    "106": [
+      {
+        "unit": "TPA",
+        "param": "Handling Capacity"
+      }
+    ],
+    "107": [
+      {
+        "unit": "TPA",
+        "param": "Handling Capacity"
+      }
+    ],
+    "133": [
+      {
+        "unit": "KLD",
+        "param": "Treatment Capacity"
+      }
+    ],
+    "47": [
+      {
+        "unit": "TPA",
+        "param": "Processing Capacity"
+      }
+    ],
+    "46": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "113": [
+      {
+        "unit": "TPA",
+        "param": "Treatment capacity"
+      }
+    ],
+    "109": [
+      {
+        "unit": "TPA",
+        "param": "Handling Capacity"
+      }
+    ],
+    "110": [
+      {
+        "unit": "TPA",
+        "param": "Handling Capacity"
+      }
+    ],
+    "112": [
+      {
+        "unit": "TPA",
+        "param": "Treatment capacity"
+      }
+    ],
+    "111": [
+      {
+        "unit": "TPA",
+        "param": "Treatment Capacity"
+      }
+    ],
+    "86": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "180": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "85": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "84": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "200": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "11": [
+      {
+        "unit": "No",
+        "param": "No. of Prospecting bore holes"
+      }
+    ],
+    "181": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "134": [
+      {
+        "unit": "KLD",
+        "param": "Treatment Capacity"
+      }
+    ],
+    "105": [
+      {
+        "unit": "Ha",
+        "param": "Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Builtup Area"
+      }
+    ],
+    "187": [
+      {
+        "unit": "Ha",
+        "param": "Built up Area"
+      }
+    ],
+    "103": [
+      {
+        "unit": "Ha",
+        "param": "Area"
+      }
+    ],
+    "104": [
+      {
+        "unit": "Ha",
+        "param": "Area"
+      }
+    ],
+    "154": [
+      {
+        "unit": "TPA",
+        "param": "Production Capacity"
+      }
+    ],
+    "90": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "68": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "67": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "41": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "34": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "36": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "38": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "37": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "39": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "40": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "32": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "29": [
+      {
+        "unit": "MTPA",
+        "param": "Throughput"
+      }
+    ],
+    "1": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "185": [
+      {
+        "unit": "MT",
+        "param": "Production / Mining  of Oil and Gas"
+      }
+    ],
+    "194": [
+      {
+        "unit": "MTPA",
+        "param": "Production Capacity"
+      }
+    ],
+    "3": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "171": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "167": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "2": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "169": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "242": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "168": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "162": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "170": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "243": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "245": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "27": [
+      {
+        "unit": "MW",
+        "param": "Power Generation capacity"
+      },
+      {
+        "unit": "Kg",
+        "param": "Processing Capacity"
+      }
+    ],
+    "244": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "10": [
+      {
+        "unit": "MT",
+        "param": "Production of Oil and Gas"
+      }
+    ],
+    "26": [
+      {
+        "unit": "Kg",
+        "param": "Processing Capacity"
+      }
+    ],
+    "25": [
+      {
+        "unit": "MW",
+        "param": "Power Generation capacity"
+      }
+    ],
+    "8": [
+      {
+        "unit": "No",
+        "param": "No. of survey well"
+      }
+    ],
+    "161": [
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      }
+    ],
+    "157": [
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      }
+    ],
+    "156": [
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      }
+    ],
+    "158": [
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      }
+    ],
+    "159": [
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      }
+    ],
+    "160": [
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      }
+    ],
+    "195": [
+      {
+        "unit": "MTPA",
+        "param": "Pellet Capacity"
+      }
+    ],
+    "64": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "65": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "163": [
+      {
+        "unit": "Km",
+        "param": "Km"
+      },
+      {
+        "unit": "Ha",
+        "param": "Ha"
+      },
+      {
+        "unit": "TPA",
+        "param": "TPA"
+      },
+      {
+        "unit": "MW",
+        "param": "MW"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "sqmtr"
+      },
+      {
+        "unit": "No",
+        "param": "No"
+      },
+      {
+        "unit": "MT",
+        "param": "MT"
+      },
+      {
+        "unit": "TMC",
+        "param": "TMC"
+      },
+      {
+        "unit": "Kg",
+        "param": "Kg"
+      },
+      {
+        "unit": "MTPA",
+        "param": "MTPA"
+      },
+      {
+        "unit": "KLD",
+        "param": "KLD"
+      },
+      {
+        "unit": "TCD",
+        "param": "TCD"
+      },
+      {
+        "unit": "Cu.m",
+        "param": "Cu.m"
+      },
+      {
+        "unit": "Passengers PA",
+        "param": "Passengers PA"
+      }
+    ],
+    "66": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "70": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "69": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "6": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "7": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "45": [
+      {
+        "unit": "TPA",
+        "param": "Refining Capacity"
+      }
+    ],
+    "5": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "9": [
+      {
+        "unit": "No",
+        "param": "No. of exploration wells"
+      }
+    ],
+    "116": [
+      {
+        "unit": "Cu.m",
+        "param": "Dredging capacity"
+      }
+    ],
+    "114": [
+      {
+        "unit": "TPA",
+        "param": "Handling capacity"
+      }
+    ],
+    "115": [
+      {
+        "unit": "TPA",
+        "param": "Handling capacity"
+      }
+    ],
+    "117": [
+      {
+        "unit": "Cu.m",
+        "param": "Dredging capacity"
+      }
+    ],
+    "118": [
+      {
+        "unit": "sqmtr",
+        "param": "Berth area"
+      }
+    ],
+    "91": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "179": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "92": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "95": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "94": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "96": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "148": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "93": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "14": [
+      {
+        "unit": "Ha",
+        "param": "Culturable command area"
+      }
+    ],
+    "15": [
+      {
+        "unit": "TMC",
+        "param": "Storage capacity"
+      }
+    ],
+    "182": [
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      },
+      {
+        "unit": "TMC",
+        "param": "Drinking water storage/Supply capacity"
+      }
+    ],
+    "13": [
+      {
+        "unit": "Ha",
+        "param": "Culturable command area"
+      }
+    ],
+    "184": [
+      {
+        "unit": "Ha",
+        "param": "Culturable command area"
+      },
+      {
+        "unit": "TMC",
+        "param": "Drinking water storage/Supply capacity"
+      }
+    ],
+    "16": [
+      {
+        "unit": "Ha",
+        "param": "Culturable command area"
+      },
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      },
+      {
+        "unit": "TMC",
+        "param": "Drinking water storage/Supply capacity"
+      }
+    ],
+    "183": [
+      {
+        "unit": "TMC",
+        "param": "Drinking water storage/Supply capacity"
+      }
+    ],
+    "12": [
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      }
+    ],
+    "190": [
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      }
+    ],
+    "132": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "188": [
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      }
+    ],
+    "189": [
+      {
+        "unit": "MW",
+        "param": "Genration Capacity"
+      }
+    ],
+    "131": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "130": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "121": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "122": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "123": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "126": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "124": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "149": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "127": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "125": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "119": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "120": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "128": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "129": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "55": [
+      {
+        "unit": "No",
+        "param": "No. of Hides"
+      }
+    ],
+    "56": [
+      {
+        "unit": "No",
+        "param": "No. of Hides"
+      }
+    ],
+    "102": [
+      {
+        "unit": "TPA",
+        "param": "Handling Capacity"
+      }
+    ],
+    "54": [
+      {
+        "unit": "No",
+        "param": "Tanning Capacity"
+      }
+    ],
+    "153": [
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      }
+    ],
+    "192": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "53": [
+      {
+        "unit": "No",
+        "param": "Tanning Capacity"
+      }
+    ],
+    "177": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "191": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "176": [
+      {
+        "unit": "TCD",
+        "param": "Cane Crushing Capacity"
+      }
+    ],
+    "178": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "97": [
+      {
+        "unit": "TCD",
+        "param": "Cane Crushing Capacity"
+      }
+    ],
+    "76": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "79": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "75": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "80": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "73": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "71": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "81": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "74": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "82": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "72": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "77": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "78": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "52": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "22": [
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      }
+    ],
+    "20": [
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      }
+    ],
+    "17": [
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      }
+    ],
+    "19": [
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      }
+    ],
+    "21": [
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      }
+    ],
+    "146": [
+      {
+        "unit": "sqmtr",
+        "param": "Built-up Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Covering area"
+      }
+    ],
+    "24": [
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      }
+    ],
+    "23": [
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      }
+    ],
+    "18": [
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      }
+    ],
+    "145": [
+      {
+        "unit": "sqmtr",
+        "param": "Built-up Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Covering area"
+      }
+    ],
+    "151": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "147": [
+      {
+        "unit": "Ha",
+        "param": "Covering area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built-up Area"
+      }
+    ],
+    "152": [
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      }
+    ]
+  },
+  "by_activity": {
+    "47": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "52": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "42": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "14": [
+      {
+        "unit": "TPA",
+        "param": "Processing Capacity"
+      }
+    ],
+    "8": [
+      {
+        "unit": "MTPA",
+        "param": "Throughput"
+      }
+    ],
+    "15": [
+      {
+        "unit": "TPA",
+        "param": "Milling/ Production Capacity"
+      }
+    ],
+    "11": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "16": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "13": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "37": [
+      {
+        "unit": "KLD",
+        "param": "Treatment Capacity"
+      }
+    ],
+    "32": [
+      {
+        "unit": "TPA",
+        "param": "Handling Capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Handling Capacity"
+      }
+    ],
+    "29": [
+      {
+        "unit": "Km",
+        "param": "Length of air strip"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of air strip"
+      },
+      {
+        "unit": "Passengers PA",
+        "param": "Handling Capacity"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      }
+    ],
+    "38": [
+      {
+        "unit": "KLD",
+        "param": "Treatment Capacity"
+      }
+    ],
+    "46": [
+      {
+        "unit": "TPA",
+        "param": "Production Capacity"
+      }
+    ],
+    "26": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "19": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Granulation capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Fortification capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Fortification capacity"
+      }
+    ],
+    "34": [
+      {
+        "unit": "TPA",
+        "param": "Handling Capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Handling Capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Treatment Capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Treatment capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Treatment capacity"
+      }
+    ],
+    "22": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "50": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "25": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "31": [
+      {
+        "unit": "Ha",
+        "param": "Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Builtup Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Built up Area"
+      }
+    ],
+    "4": [
+      {
+        "unit": "No",
+        "param": "No. of Prospecting bore holes"
+      }
+    ],
+    "9": [
+      {
+        "unit": "MTPA",
+        "param": "Throughput"
+      }
+    ],
+    "33": [
+      {
+        "unit": "TPA",
+        "param": "Treatment Capacity"
+      }
+    ],
+    "76": [
+      {
+        "unit": "MT",
+        "param": "Production / Mining  of Oil and Gas"
+      }
+    ],
+    "75": [
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      }
+    ],
+    "49": [
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      }
+    ],
+    "51": [
+      {
+        "unit": "Km",
+        "param": "Km"
+      },
+      {
+        "unit": "Ha",
+        "param": "Ha"
+      },
+      {
+        "unit": "TPA",
+        "param": "TPA"
+      },
+      {
+        "unit": "MW",
+        "param": "MW"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "sqmtr"
+      },
+      {
+        "unit": "No",
+        "param": "No"
+      },
+      {
+        "unit": "MT",
+        "param": "MT"
+      },
+      {
+        "unit": "TMC",
+        "param": "TMC"
+      },
+      {
+        "unit": "Kg",
+        "param": "Kg"
+      },
+      {
+        "unit": "MTPA",
+        "param": "MTPA"
+      },
+      {
+        "unit": "KLD",
+        "param": "KLD"
+      },
+      {
+        "unit": "TCD",
+        "param": "TCD"
+      },
+      {
+        "unit": "Cu.m",
+        "param": "Cu.m"
+      },
+      {
+        "unit": "Passengers PA",
+        "param": "Passengers PA"
+      }
+    ],
+    "39": [
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area of Hospital part"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up Area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built up area of both College Hostel Hospital etc"
+      }
+    ],
+    "21": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "7": [
+      {
+        "unit": "MW",
+        "param": "Power Generation capacity"
+      },
+      {
+        "unit": "Kg",
+        "param": "Processing Capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Power Generation capacity"
+      },
+      {
+        "unit": "Kg",
+        "param": "Processing Capacity"
+      }
+    ],
+    "20": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "79": [
+      {
+        "unit": "MTPA",
+        "param": "Pellet Capacity"
+      }
+    ],
+    "3": [
+      {
+        "unit": "MT",
+        "param": "Production of Oil and Gas"
+      },
+      {
+        "unit": "No",
+        "param": "No. of survey well"
+      },
+      {
+        "unit": "No",
+        "param": "No. of exploration wells"
+      }
+    ],
+    "12": [
+      {
+        "unit": "TPA",
+        "param": "Refining Capacity"
+      }
+    ],
+    "23": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "48": [
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Builtup area"
+      }
+    ],
+    "2": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      },
+      {
+        "unit": "Km",
+        "param": "Length"
+      },
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "41": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      },
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "17": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "30": [
+      {
+        "unit": "TPA",
+        "param": "Handling Capacity"
+      }
+    ],
+    "35": [
+      {
+        "unit": "TPA",
+        "param": "Handling capacity"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Berth area"
+      },
+      {
+        "unit": "Cu.m",
+        "param": "Dredging capacity"
+      },
+      {
+        "unit": "Cu.m",
+        "param": "Dredging capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Handling capacity"
+      }
+    ],
+    "77": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      },
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "45": [
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      }
+    ],
+    "18": [
+      {
+        "unit": "No",
+        "param": "Tanning Capacity"
+      },
+      {
+        "unit": "No",
+        "param": "Tanning Capacity"
+      },
+      {
+        "unit": "No",
+        "param": "No. of Hides"
+      },
+      {
+        "unit": "No",
+        "param": "No. of Hides"
+      }
+    ],
+    "10": [
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production Capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "MTPA",
+        "param": "Production capacity"
+      }
+    ],
+    "27": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "44": [
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      }
+    ],
+    "1": [
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Mine Lease Area"
+      }
+    ],
+    "28": [
+      {
+        "unit": "TCD",
+        "param": "Cane Crushing Capacity"
+      },
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "KLD",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TCD",
+        "param": "Cane Crushing Capacity"
+      }
+    ],
+    "40": [
+      {
+        "unit": "sqmtr",
+        "param": "Built-up Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Covering area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built-up Area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Covering area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Covering area"
+      },
+      {
+        "unit": "sqmtr",
+        "param": "Built-up Area"
+      }
+    ],
+    "43": [
+      {
+        "unit": "Km",
+        "param": "Length"
+      }
+    ],
+    "5": [
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      },
+      {
+        "unit": "Ha",
+        "param": "Culturable command area"
+      },
+      {
+        "unit": "Ha",
+        "param": "Culturable command area"
+      },
+      {
+        "unit": "TMC",
+        "param": "Storage capacity"
+      },
+      {
+        "unit": "Ha",
+        "param": "Culturable command area"
+      },
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      },
+      {
+        "unit": "TMC",
+        "param": "Drinking water storage/Supply capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      },
+      {
+        "unit": "TMC",
+        "param": "Drinking water storage/Supply capacity"
+      },
+      {
+        "unit": "TMC",
+        "param": "Drinking water storage/Supply capacity"
+      },
+      {
+        "unit": "Ha",
+        "param": "Culturable command area"
+      },
+      {
+        "unit": "TMC",
+        "param": "Drinking water storage/Supply capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Genration Capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Generation Capacity"
+      }
+    ],
+    "36": [
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      },
+      {
+        "unit": "Km",
+        "param": "Length of road"
+      }
+    ],
+    "24": [
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      },
+      {
+        "unit": "TPA",
+        "param": "Production capacity"
+      }
+    ],
+    "6": [
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      },
+      {
+        "unit": "MW",
+        "param": "Power generation capacity"
+      }
+    ]
+  }
+}

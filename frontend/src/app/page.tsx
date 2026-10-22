@@ -34,6 +34,7 @@ import {
 
 import defaultActivities from "../data/activities.json";
 import defaultSubactivities from "../data/subactivities.json";
+import thresholdUnitsData from "../data/threshold_units.json";
 
 export default function Home() {
   // Master data: pre-populate all 56 official sectors immediately
@@ -51,6 +52,15 @@ export default function Home() {
   );
   const [capacity, setCapacity] = useState<string>("250");
   const [capacityUnit, setCapacityUnit] = useState<string>("sqmtr");
+  const [capacityParamLabel, setCapacityParamLabel] = useState<string>("Project Extent / Capacity");
+  const [availableUnits, setAvailableUnits] = useState<{ unit: string; param?: string }[]>([
+    { unit: "sqmtr", param: "Built up Area" },
+    { unit: "Km", param: "Length" },
+    { unit: "Ha", param: "Area" },
+    { unit: "MW", param: "Capacity" },
+    { unit: "TPA", param: "Production Capacity" },
+    { unit: "KLPD", param: "Capacity" },
+  ]);
 
   // Location State
   const [locationMode, setLocationMode] = useState<"Point Location" | "Upload KML">("Point Location");
@@ -95,6 +105,43 @@ export default function Home() {
     }
     loadSubs();
   }, [selectedActivityId]);
+
+  // Dynamically update Unit and Parameter label based on selected Subactivity / Activity
+  useEffect(() => {
+    const subObj = subActivities.find(
+      (s) => (s.name || s.sub_activity_name)?.trim().toLowerCase() === selectedSubActivityName?.trim().toLowerCase()
+    );
+    const subId = subObj?.id ? String(subObj.id) : null;
+    const actId = selectedActivityId ? String(selectedActivityId) : null;
+
+    let matched: { unit: string; param?: string }[] = [];
+    if (subId && (thresholdUnitsData.by_subactivity as Record<string, { unit: string; param?: string }[]>)[subId]) {
+      matched = (thresholdUnitsData.by_subactivity as Record<string, { unit: string; param?: string }[]>)[subId];
+    } else if (actId && (thresholdUnitsData.by_activity as Record<string, { unit: string; param?: string }[]>)[actId]) {
+      matched = (thresholdUnitsData.by_activity as Record<string, { unit: string; param?: string }[]>)[actId];
+    }
+
+    if (matched && matched.length > 0) {
+      setAvailableUnits(matched);
+      // Auto-select official unit
+      setCapacityUnit(matched[0].unit);
+      if (matched[0].param) {
+        setCapacityParamLabel(matched[0].param);
+      } else {
+        setCapacityParamLabel("Project Extent / Capacity");
+      }
+    } else {
+      setAvailableUnits([
+        { unit: "sqmtr", param: "Built up Area" },
+        { unit: "Km", param: "Length" },
+        { unit: "Ha", param: "Area" },
+        { unit: "MW", param: "Capacity" },
+        { unit: "TPA", param: "Production Capacity" },
+        { unit: "KLPD", param: "Capacity" },
+      ]);
+      setCapacityParamLabel("Project Extent / Capacity");
+    }
+  }, [selectedSubActivityName, selectedActivityId, subActivities]);
 
   // Handle Activity Select Change (Instant swap from subactivities catalog)
   const handleActivityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -418,7 +465,7 @@ ${report.clearances.map((c) => `- ${c.Approval}: ${c.Applicability}`).join("\n")
             <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "12px", marginBottom: "24px" }}>
               <div>
                 <label className="input-label" htmlFor="capacity-input">
-                  Project Extent / Capacity *
+                  {capacityParamLabel} *
                 </label>
                 <input
                   id="capacity-input"
@@ -426,7 +473,7 @@ ${report.clearances.map((c) => `- ${c.Approval}: ${c.Applicability}`).join("\n")
                   className="input-field"
                   value={capacity}
                   onChange={(e) => setCapacity(e.target.value)}
-                  placeholder="e.g. 250"
+                  placeholder={`e.g. ${capacityUnit === "Km" ? "15" : capacityUnit === "sqmtr" ? "25000" : "250"}`}
                 />
               </div>
               <div>
@@ -439,11 +486,11 @@ ${report.clearances.map((c) => `- ${c.Approval}: ${c.Applicability}`).join("\n")
                   value={capacityUnit}
                   onChange={(e) => setCapacityUnit(e.target.value)}
                 >
-                  <option value="sqmtr" style={{ background: "#0f172a" }}>sqmtr</option>
-                  <option value="MW" style={{ background: "#0f172a" }}>MW</option>
-                  <option value="TPA" style={{ background: "#0f172a" }}>TPA</option>
-                  <option value="Ha" style={{ background: "#0f172a" }}>Ha</option>
-                  <option value="KLPD" style={{ background: "#0f172a" }}>KLPD</option>
+                  {availableUnits.map((u, i) => (
+                    <option key={i} value={u.unit} style={{ background: "#0f172a" }}>
+                      {u.unit}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
