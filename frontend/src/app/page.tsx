@@ -461,37 +461,82 @@ ${report.clearances.map((c) => `- ${c.Approval}: ${c.Applicability}`).join("\n")
               </select>
             </div>
 
-            {/* Capacity Input */}
-            <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "12px", marginBottom: "24px" }}>
-              <div>
-                <label className="input-label" htmlFor="capacity-input">
-                  {capacityParamLabel} *
+            {/* Project Capacity / Extent Input with Direct Unit Addon */}
+            <div style={{ marginBottom: "24px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+                <label className="input-label" htmlFor="capacity-input" style={{ marginBottom: 0 }}>
+                  Project Capacity/Extent *
                 </label>
+                {capacityParamLabel && capacityParamLabel !== "Project Extent / Capacity" && (
+                  <span style={{ fontSize: "11px", color: "rgba(56, 189, 248, 0.9)", fontWeight: 500 }}>
+                    Parameter: {capacityParamLabel}
+                  </span>
+                )}
+              </div>
+
+              <div style={{ position: "relative", display: "flex", alignItems: "stretch" }}>
                 <input
                   id="capacity-input"
                   type="text"
                   className="input-field"
                   value={capacity}
                   onChange={(e) => setCapacity(e.target.value)}
-                  placeholder={`e.g. ${capacityUnit === "Km" ? "15" : capacityUnit === "sqmtr" ? "25000" : "250"}`}
+                  placeholder={`Enter ${capacityParamLabel || "capacity"}`}
+                  style={{
+                    borderTopRightRadius: 0,
+                    borderBottomRightRadius: 0,
+                    borderRight: "none",
+                    flex: 1,
+                  }}
                 />
-              </div>
-              <div>
-                <label className="input-label" htmlFor="unit-input">
-                  Unit
-                </label>
-                <select
-                  id="unit-input"
-                  className="input-field"
-                  value={capacityUnit}
-                  onChange={(e) => setCapacityUnit(e.target.value)}
-                >
-                  {availableUnits.map((u, i) => (
-                    <option key={i} value={u.unit} style={{ background: "#0f172a" }}>
-                      {u.unit}
-                    </option>
-                  ))}
-                </select>
+                
+                {availableUnits.length > 1 ? (
+                  <select
+                    id="unit-input"
+                    value={capacityUnit}
+                    onChange={(e) => setCapacityUnit(e.target.value)}
+                    title="Select measurement unit"
+                    style={{
+                      background: "rgba(15, 23, 42, 0.9)",
+                      border: "1px solid rgba(56, 189, 248, 0.3)",
+                      borderLeft: "none",
+                      borderTopRightRadius: "8px",
+                      borderBottomRightRadius: "8px",
+                      color: "#38bdf8",
+                      padding: "0 14px",
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      cursor: "pointer",
+                      outline: "none",
+                    }}
+                  >
+                    {availableUnits.map((u, i) => (
+                      <option key={i} value={u.unit} style={{ background: "#0f172a", color: "#f8fafc" }}>
+                        ({u.unit})
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <span
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "rgba(15, 23, 42, 0.9)",
+                      border: "1px solid rgba(56, 189, 248, 0.3)",
+                      borderLeft: "none",
+                      borderTopRightRadius: "8px",
+                      borderBottomRightRadius: "8px",
+                      color: "#38bdf8",
+                      padding: "0 16px",
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      userSelect: "none",
+                    }}
+                  >
+                    ({capacityUnit})
+                  </span>
+                )}
               </div>
             </div>
 
