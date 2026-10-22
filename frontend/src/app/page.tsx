@@ -93,6 +93,38 @@ export default function Home() {
     init();
   }, []);
 
+  // Helper to dynamically resolve official unit and parameter name from official portal catalog
+  const resolveThreshold = (
+    subName: string,
+    actId?: number,
+    subsList?: MasterSubActivity[]
+  ) => {
+    const clean = (str: string) => (str || "").replace(/\s+/g, " ").trim().toLowerCase();
+    const actIdStr = String(actId || selectedActivityId || "");
+    const subs = subsList || subActivities || (defaultSubactivities as Record<string, MasterSubActivity[]>)[actIdStr] || [];
+
+    const subObj = subs.find(
+      (s) => clean(s.name || s.sub_activity_name || "") === clean(subName)
+    );
+
+    let matched: { unit: string; param?: string }[] = [];
+    if (subObj?.id && (thresholdUnitsData.by_subactivity as Record<string, { unit: string; param?: string }[]>)[String(subObj.id)]) {
+      matched = (thresholdUnitsData.by_subactivity as Record<string, { unit: string; param?: string }[]>)[String(subObj.id)];
+    } else if (actIdStr && (thresholdUnitsData.by_activity as Record<string, { unit: string; param?: string }[]>)[actIdStr]) {
+      matched = (thresholdUnitsData.by_activity as Record<string, { unit: string; param?: string }[]>)[actIdStr];
+    }
+
+    if (matched && matched.length > 0) {
+      setAvailableUnits(matched);
+      setCapacityUnit(matched[0].unit);
+      setCapacityParamLabel(matched[0].param || "Project Capacity/Extent");
+    } else {
+      setAvailableUnits([{ unit: "sqmtr", param: "Project Capacity/Extent" }]);
+      setCapacityUnit("sqmtr");
+      setCapacityParamLabel("Project Capacity/Extent");
+    }
+  };
+
   // When selected activity changes, confirm with backend/cache
   useEffect(() => {
     async function loadSubs() {
@@ -108,39 +140,7 @@ export default function Home() {
 
   // Dynamically update Unit and Parameter label based on selected Subactivity / Activity
   useEffect(() => {
-    const subObj = subActivities.find(
-      (s) => (s.name || s.sub_activity_name)?.trim().toLowerCase() === selectedSubActivityName?.trim().toLowerCase()
-    );
-    const subId = subObj?.id ? String(subObj.id) : null;
-    const actId = selectedActivityId ? String(selectedActivityId) : null;
-
-    let matched: { unit: string; param?: string }[] = [];
-    if (subId && (thresholdUnitsData.by_subactivity as Record<string, { unit: string; param?: string }[]>)[subId]) {
-      matched = (thresholdUnitsData.by_subactivity as Record<string, { unit: string; param?: string }[]>)[subId];
-    } else if (actId && (thresholdUnitsData.by_activity as Record<string, { unit: string; param?: string }[]>)[actId]) {
-      matched = (thresholdUnitsData.by_activity as Record<string, { unit: string; param?: string }[]>)[actId];
-    }
-
-    if (matched && matched.length > 0) {
-      setAvailableUnits(matched);
-      // Auto-select official unit
-      setCapacityUnit(matched[0].unit);
-      if (matched[0].param) {
-        setCapacityParamLabel(matched[0].param);
-      } else {
-        setCapacityParamLabel("Project Extent / Capacity");
-      }
-    } else {
-      setAvailableUnits([
-        { unit: "sqmtr", param: "Built up Area" },
-        { unit: "Km", param: "Length" },
-        { unit: "Ha", param: "Area" },
-        { unit: "MW", param: "Capacity" },
-        { unit: "TPA", param: "Production Capacity" },
-        { unit: "KLPD", param: "Capacity" },
-      ]);
-      setCapacityParamLabel("Project Extent / Capacity");
-    }
+    resolveThreshold(selectedSubActivityName, selectedActivityId, subActivities);
   }, [selectedSubActivityName, selectedActivityId, subActivities]);
 
   // Handle Activity Select Change (Instant swap from subactivities catalog)
@@ -157,12 +157,21 @@ export default function Home() {
       const preloaded = (defaultSubactivities as Record<string, MasterSubActivity[]>)[String(newId)];
       if (preloaded && preloaded.length > 0) {
         setSubActivities(preloaded);
-        setSelectedSubActivityName(preloaded[0].name || "General");
+        const firstSub = preloaded[0].name || "General";
+        setSelectedSubActivityName(firstSub);
+        resolveThreshold(firstSub, newId, preloaded);
       } else {
         setSubActivities([{ id: 0, name: "General (All categories)" }]);
         setSelectedSubActivityName("General (All categories)");
+        resolveThreshold("General", newId, []);
       }
     }
+  };
+
+  // Handle Subactivity Select Change
+  const handleSubActivityChange = (subName: string) => {
+    setSelectedSubActivityName(subName);
+    resolveThreshold(subName, selectedActivityId, subActivities);
   };
 
   // Handle KML File Upload
@@ -441,7 +450,7 @@ ${report.clearances.map((c) => `- ${c.Approval}: ${c.Applicability}`).join("\n")
                 id="subactivity-select"
                 className="input-field"
                 value={selectedSubActivityName}
-                onChange={(e) => setSelectedSubActivityName(e.target.value)}
+                onChange={(e) => handleSubActivityChange(e.target.value)}
               >
                 {subActivities.length > 0 ? (
                   subActivities.map((s, idx) => {
@@ -461,32 +470,31 @@ ${report.clearances.map((c) => `- ${c.Approval}: ${c.Applicability}`).join("\n")
               </select>
             </div>
 
-            {/* Project Capacity / Extent Input with Direct Unit Addon */}
+            {/* Project Capacity/Extent matching Government Portal */}
             <div style={{ marginBottom: "24px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
-                <label className="input-label" htmlFor="capacity-input" style={{ marginBottom: 0 }}>
-                  Project Capacity/Extent *
-                </label>
-                {capacityParamLabel && capacityParamLabel !== "Project Extent / Capacity" && (
-                  <span style={{ fontSize: "11px", color: "rgba(56, 189, 248, 0.9)", fontWeight: 500 }}>
+              <label className="input-label" htmlFor="capacity-input" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+                <span>Project Capacity/Extent *</span>
+                {capacityParamLabel && capacityParamLabel !== "Project Capacity/Extent" && (
+                  <span style={{ fontSize: "12px", color: "#38bdf8", fontWeight: 500, textTransform: "none" }}>
                     Parameter: {capacityParamLabel}
                   </span>
                 )}
-              </div>
+              </label>
 
-              <div style={{ position: "relative", display: "flex", alignItems: "stretch" }}>
+              <div style={{ position: "relative", display: "flex", alignItems: "stretch", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(255, 255, 255, 0.12)" }}>
                 <input
                   id="capacity-input"
-                  type="text"
+                  type="number"
+                  step="any"
                   className="input-field"
                   value={capacity}
                   onChange={(e) => setCapacity(e.target.value)}
-                  placeholder={`Enter ${capacityParamLabel || "capacity"}`}
+                  placeholder={capacityParamLabel || "Enter value"}
                   style={{
-                    borderTopRightRadius: 0,
-                    borderBottomRightRadius: 0,
-                    borderRight: "none",
+                    border: "none",
+                    borderRadius: 0,
                     flex: 1,
+                    margin: 0,
                   }}
                 />
                 
@@ -495,19 +503,18 @@ ${report.clearances.map((c) => `- ${c.Approval}: ${c.Applicability}`).join("\n")
                     id="unit-input"
                     value={capacityUnit}
                     onChange={(e) => setCapacityUnit(e.target.value)}
-                    title="Select measurement unit"
+                    title="Available official statutory units for this sub-activity"
                     style={{
-                      background: "rgba(15, 23, 42, 0.9)",
-                      border: "1px solid rgba(56, 189, 248, 0.3)",
-                      borderLeft: "none",
-                      borderTopRightRadius: "8px",
-                      borderBottomRightRadius: "8px",
+                      background: "rgba(15, 23, 42, 0.95)",
+                      border: "none",
+                      borderLeft: "1px solid rgba(255, 255, 255, 0.12)",
                       color: "#38bdf8",
-                      padding: "0 14px",
-                      fontSize: "13px",
-                      fontWeight: 600,
+                      padding: "0 16px",
+                      fontSize: "14px",
+                      fontWeight: 700,
                       cursor: "pointer",
                       outline: "none",
+                      fontFamily: "monospace",
                     }}
                   >
                     {availableUnits.map((u, i) => (
@@ -517,25 +524,24 @@ ${report.clearances.map((c) => `- ${c.Approval}: ${c.Applicability}`).join("\n")
                     ))}
                   </select>
                 ) : (
-                  <span
+                  <div
+                    id="basic-addon2"
                     style={{
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      background: "rgba(15, 23, 42, 0.9)",
-                      border: "1px solid rgba(56, 189, 248, 0.3)",
-                      borderLeft: "none",
-                      borderTopRightRadius: "8px",
-                      borderBottomRightRadius: "8px",
+                      background: "rgba(15, 23, 42, 0.95)",
+                      borderLeft: "1px solid rgba(255, 255, 255, 0.12)",
                       color: "#38bdf8",
-                      padding: "0 16px",
-                      fontSize: "13px",
-                      fontWeight: 600,
+                      padding: "0 18px",
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      fontFamily: "monospace",
                       userSelect: "none",
                     }}
                   >
                     ({capacityUnit})
-                  </span>
+                  </div>
                 )}
               </div>
             </div>
