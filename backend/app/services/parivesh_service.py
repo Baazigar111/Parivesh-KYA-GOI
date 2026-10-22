@@ -114,9 +114,10 @@ def execute_clearance_evaluation(req: ClearanceRequest) -> ClearanceResponse:
     )
 
     if not raw_results:
+        log_summary = " | ".join(status_tracker.logs[-3:]) if status_tracker.logs else "Execution halted unexpectedly."
         return ClearanceResponse(
             success=False,
-            message="PARIVESH automated evaluation failed to return data. Check logs or retry.",
+            message=f"PARIVESH portal failed to return clearance data ({log_summary}).",
             execution_time_seconds=round(time.time() - start_time, 2)
         )
 

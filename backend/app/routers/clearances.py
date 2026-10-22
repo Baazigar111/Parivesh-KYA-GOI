@@ -37,7 +37,11 @@ def evaluate_project_clearances(request: ClearanceRequest):
     """
     try:
         response = execute_clearance_evaluation(request)
+        if not response.success:
+            raise HTTPException(status_code=500, detail=response.message)
         return response
+    except HTTPException:
+        raise
     except Exception as e:
         logger.exception("Error evaluating clearances: %s", e)
         raise HTTPException(status_code=500, detail=f"Clearance evaluation failed: {str(e)}")

@@ -820,7 +820,7 @@ ${report.clearances.map((c) => `- ${c.Approval}: ${c.Applicability}`).join("\n")
                   </div>
                   <div className="kpi-card kpi-toposheet">
                     <div className="kpi-label">Toposheet No.</div>
-                    <div className="kpi-value cyan">{report.toposheet || "46C/16"}</div>
+                    <div className="kpi-value cyan">{report.toposheet || "N/A"}</div>
                   </div>
                 </div>
 
