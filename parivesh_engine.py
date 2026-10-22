@@ -497,14 +497,51 @@ def run_full_automated_lookup(
                 status.info(f"Entering coordinates: ({lat}, {lon})...")
                 try:
                     page.locator("mat-radio-button, [role='radio']").filter(has_text="Point Location").first.click(force=True)
-                    page.wait_for_timeout(500)
+                    page.wait_for_timeout(600)
+                    # Dismiss disclaimer modal if shown
+                    close_btn = page.locator("#staticBackdrop button:has-text('Close'), button[data-bs-dismiss='modal']").first
+                    if close_btn.is_visible():
+                        close_btn.click()
+                        page.wait_for_timeout(400)
                 except Exception:
                     pass
-                lat_i = page.locator("input[placeholder*='Lat'], input[formcontrolname*='lat']").first
-                lon_i = page.locator("input[placeholder*='Lon'], input[formcontrolname*='lon'], input[placeholder*='Long']").first
-                if lat_i.is_visible() and lon_i.is_visible():
-                    lat_i.fill(str(lat))
-                    lon_i.fill(str(lon))
+
+                # Convert decimal degrees to Degrees, Minutes, Seconds (DMS)
+                try:
+                    def _to_dms(deg_val):
+                        d = int(deg_val)
+                        rem = abs(deg_val - d) * 60
+                        m = int(rem)
+                        s = round((rem - m) * 60, 2)
+                        return d, m, s
+
+                    lat_d, lat_m, lat_s = _to_dms(lat)
+                    lon_d, lon_m, lon_s = _to_dms(lon)
+
+                    page.evaluate("""({lat_d, lat_m, lat_s, lon_d, lon_m, lon_s}) => {
+                        function setVal(id, val) {
+                            const el = document.getElementById(id);
+                            if (el) {
+                                el.value = val;
+                                el.dispatchEvent(new Event('input', {bubbles: true}));
+                                el.dispatchEvent(new Event('change', {bubbles: true}));
+                            }
+                        }
+                        setVal('latDeg', lat_d);
+                        setVal('latMin', lat_m);
+                        setVal('latSec', lat_s);
+                        setVal('lngDeg', lon_d);
+                        setVal('lngMin', lon_m);
+                        setVal('lngSec', lon_s);
+                    }""", {"lat_d": lat_d, "lat_m": lat_m, "lat_s": lat_s, "lon_d": lon_d, "lon_m": lon_m, "lon_s": lon_s})
+                    logger.info("DMS coordinates filled: Lat(%s° %s' %s\") Lon(%s° %s' %s\")", lat_d, lat_m, lat_s, lon_d, lon_m, lon_s)
+                except Exception as e:
+                    logger.warning("DMS input failed, trying direct inputs: %s", e)
+                    lat_i = page.locator("input[placeholder*='Lat'], input[formcontrolname*='lat']").first
+                    lon_i = page.locator("input[placeholder*='Lon'], input[formcontrolname*='lon'], input[placeholder*='Long']").first
+                    if lat_i.is_visible() and lon_i.is_visible():
+                        lat_i.fill(str(lat))
+                        lon_i.fill(str(lon))
 
             # ── 5. CAPTCHA Solving ────────────────────────────────────────────
             status.info("Resolving CAPTCHA...")
