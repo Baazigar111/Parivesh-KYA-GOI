@@ -33,16 +33,22 @@ import {
 } from "../services/api";
 
 import defaultActivities from "../data/activities.json";
+import defaultSubactivities from "../data/subactivities.json";
 
 export default function Home() {
   // Master data: pre-populate all 56 official sectors immediately
   const [activities, setActivities] = useState<MasterActivity[]>(defaultActivities);
-  const [subActivities, setSubActivities] = useState<MasterSubActivity[]>([]);
+  
+  // Pre-populate initial sub-activities for Airports (ID 29)
+  const initialSubs = (defaultSubactivities as Record<string, MasterSubActivity[]>)["29"] || [];
+  const [subActivities, setSubActivities] = useState<MasterSubActivity[]>(initialSubs);
 
   // Form State
   const [selectedActivityName, setSelectedActivityName] = useState<string>("Airports");
   const [selectedActivityId, setSelectedActivityId] = useState<number | undefined>(29);
-  const [selectedSubActivityName, setSelectedSubActivityName] = useState<string>("Airports (all categories)");
+  const [selectedSubActivityName, setSelectedSubActivityName] = useState<string>(
+    initialSubs[0]?.name || "All New projects including Airstrips for commercial use"
+  );
   const [capacity, setCapacity] = useState<string>("250");
   const [capacityUnit, setCapacityUnit] = useState<string>("sqmtr");
 
@@ -77,33 +83,39 @@ export default function Home() {
     init();
   }, []);
 
-  // When selected activity changes, load sub-activities
+  // When selected activity changes, confirm with backend/cache
   useEffect(() => {
     async function loadSubs() {
       if (selectedActivityId) {
         const subs = await fetchSubActivities(selectedActivityId);
-        setSubActivities(subs);
-        if (subs.length > 0) {
-          const firstSub = subs[0];
-          setSelectedSubActivityName(
-            firstSub.name || firstSub.sub_activity_name || firstSub.subActivityName || "General"
-          );
-        } else {
-          setSelectedSubActivityName("No sub-activities specified");
+        if (subs && subs.length > 0) {
+          setSubActivities(subs);
         }
       }
     }
     loadSubs();
   }, [selectedActivityId]);
 
-  // Handle Activity Select Change
+  // Handle Activity Select Change (Instant swap from subactivities catalog)
   const handleActivityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const actName = e.target.value;
     setSelectedActivityName(actName);
     const found = activities.find(
       (a) => (a.name || a.activity_name)?.trim().toLowerCase() === actName.trim().toLowerCase()
     );
-    setSelectedActivityId(found?.id || found?.activity_id);
+    const newId = found?.id || found?.activity_id;
+    setSelectedActivityId(newId);
+
+    if (newId) {
+      const preloaded = (defaultSubactivities as Record<string, MasterSubActivity[]>)[String(newId)];
+      if (preloaded && preloaded.length > 0) {
+        setSubActivities(preloaded);
+        setSelectedSubActivityName(preloaded[0].name || "General");
+      } else {
+        setSubActivities([{ id: 0, name: "General (All categories)" }]);
+        setSelectedSubActivityName("General (All categories)");
+      }
+    }
   };
 
   // Handle KML File Upload
@@ -126,8 +138,16 @@ export default function Home() {
     setLongitude(lon);
     setCapacity(cap);
     setSelectedActivityName(act);
-    const found = activities.find((a) => (a.name || a.activity_name) === act);
-    setSelectedActivityId(found?.id || found?.activity_id);
+    const found = activities.find((a) => (a.name || a.activity_name)?.trim().toLowerCase() === act.trim().toLowerCase());
+    const newId = found?.id || found?.activity_id;
+    setSelectedActivityId(newId);
+    if (newId) {
+      const preloaded = (defaultSubactivities as Record<string, MasterSubActivity[]>)[String(newId)];
+      if (preloaded && preloaded.length > 0) {
+        setSubActivities(preloaded);
+        setSelectedSubActivityName(preloaded[0].name || "General");
+      }
+    }
   };
 
   // Trigger Clearance Evaluation

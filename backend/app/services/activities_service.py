@@ -72,6 +72,23 @@ def get_subactivities_by_id(activity_id: int) -> List[Dict[str, Any]]:
         logger.info("Serving sub-activities for ID %s from cache", activity_id)
         return cached_data
 
+    # 1. Check local seed catalog 'parivesh_subactivities.json'
+    local_sub_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "parivesh_subactivities.json")
+    if not os.path.exists(local_sub_path):
+        local_sub_path = "parivesh_subactivities.json"
+
+    if os.path.exists(local_sub_path):
+        try:
+            with open(local_sub_path, "r", encoding="utf-8") as f:
+                catalog = json.load(f)
+                if str(activity_id) in catalog and catalog[str(activity_id)]:
+                    sub_list = catalog[str(activity_id)]
+                    cache.set(cache_key, sub_list, ex=settings.CACHE_TTL_SUBACTIVITIES)
+                    return sub_list
+        except Exception as e:
+            logger.warning("Failed to load local parivesh_subactivities.json: %s", e)
+
+    # 2. Live NIC API
     url = f"{settings.PARIVESH_API_BASE}/getSubactivity?id={activity_id}"
     try:
         res = requests.get(url, headers=HEADERS, timeout=8)

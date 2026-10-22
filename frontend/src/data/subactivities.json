@@ -1,0 +1,866 @@
+{
+  "52": [
+    {
+      "id": 164,
+      "name": "NA"
+    }
+  ],
+  "29": [
+    {
+      "id": 99,
+      "name": "All Expansion projects including  Airstrips for commercial use"
+    },
+    {
+      "id": 98,
+      "name": "All New projects including Airstrips for commercial use"
+    },
+    {
+      "id": 186,
+      "name": "Expansion of Terminal buildings and allied buildings within existing airport premises (Built up Area >=20,000 Sq.m and upto 1,50,000Sq.m) without increasing area in airport"
+    },
+    {
+      "id": 100,
+      "name": "New/Expansion of Airstrips which do not involve bunkering / refueling facility and or Air Traffic Control"
+    }
+  ],
+  "15": [
+    {
+      "id": 48,
+      "name": "NA"
+    }
+  ],
+  "33": [
+    {
+      "id": 108,
+      "name": "NA"
+    }
+  ],
+  "39": [
+    {
+      "id": 136,
+      "name": "Commercial Building(s)"
+    },
+    {
+      "id": 142,
+      "name": "Hospital"
+    },
+    {
+      "id": 138,
+      "name": "Hospital / Dispensary / Nursing Homes / other Healthcare facility"
+    },
+    {
+      "id": 196,
+      "name": "Hospital with Medical College"
+    },
+    {
+      "id": 197,
+      "name": "Hostel for educational institutions"
+    },
+    {
+      "id": 198,
+      "name": "Hotel"
+    },
+    {
+      "id": 140,
+      "name": "Industrial sheds"
+    },
+    {
+      "id": 139,
+      "name": "Logistic warehouse"
+    },
+    {
+      "id": 143,
+      "name": "Medical College"
+    },
+    {
+      "id": 137,
+      "name": "Office Building / Complex"
+    },
+    {
+      "id": 144,
+      "name": "Other Buildings"
+    },
+    {
+      "id": 135,
+      "name": "Residential building(s)"
+    },
+    {
+      "id": 141,
+      "name": "School / College"
+    },
+    {
+      "id": 199,
+      "name": "School, College with Hostel Educational Institutions"
+    }
+  ],
+  "42": [
+    {
+      "id": 150,
+      "name": "Optical Fibre Cable /Other cables"
+    }
+  ],
+  "47": [
+    {
+      "id": 155,
+      "name": "NA"
+    }
+  ],
+  "11": [
+    {
+      "id": 42,
+      "name": "Integrated Cement plants and Grinding units"
+    },
+    {
+      "id": 43,
+      "name": "Standalone Cement plants"
+    },
+    {
+      "id": 44,
+      "name": "Standalone Grinding unit"
+    }
+  ],
+  "19": [
+    {
+      "id": 57,
+      "name": "All projects including Single Super Phosphate with H2SO4 production"
+    },
+    {
+      "id": 58,
+      "name": "All Single Super Phosphate without H2SO4 production"
+    },
+    {
+      "id": 63,
+      "name": "Fortification of fertilizer"
+    },
+    {
+      "id": 61,
+      "name": "Granulation of single super phosphate powder"
+    },
+    {
+      "id": 60,
+      "name": "Nano Fertilizers"
+    },
+    {
+      "id": 62,
+      "name": "Neem coating of fertilizer"
+    },
+    {
+      "id": 59,
+      "name": "Urea"
+    }
+  ],
+  "16": [
+    {
+      "id": 51,
+      "name": "Existing units converting to membrane cell technology"
+    },
+    {
+      "id": 49,
+      "name": "Loacted outside the notified Industrial area/Estate"
+    },
+    {
+      "id": 50,
+      "name": "Loacted Within the notified Industrial area/Estate"
+    }
+  ],
+  "8": [
+    {
+      "id": 28,
+      "name": "NA"
+    }
+  ],
+  "14": [
+    {
+      "id": 47,
+      "name": "NA"
+    }
+  ],
+  "13": [
+    {
+      "id": 46,
+      "name": "NA"
+    }
+  ],
+  "37": [
+    {
+      "id": 133,
+      "name": "Common Effluent Treatment Plants (CETPs)"
+    }
+  ],
+  "32": [
+    {
+      "id": 107,
+      "name": "All facilities having land fill only"
+    },
+    {
+      "id": 106,
+      "name": "All integerated facilities having incineration and landfill or incineration alone"
+    }
+  ],
+  "34": [
+    {
+      "id": 109,
+      "name": "Integrated Municipal Solid Waste Management Facility (CMSWMF)"
+    },
+    {
+      "id": 110,
+      "name": "Landfill site"
+    },
+    {
+      "id": 113,
+      "name": "Standalone Collection / segreation facilities"
+    },
+    {
+      "id": 112,
+      "name": "Standalone  Composting Plant"
+    },
+    {
+      "id": 111,
+      "name": "Standalone Refused Derived Fuel (RDF) Plants"
+    }
+  ],
+  "25": [
+    {
+      "id": 86,
+      "name": "Grain/non-molasses based for non-EBP"
+    },
+    {
+      "id": 85,
+      "name": "Molasses-based plant for EBP"
+    },
+    {
+      "id": 84,
+      "name": "Molasses-based plant for non-EBP"
+    },
+    {
+      "id": 200,
+      "name": "Non-molasses based for EBP"
+    }
+  ],
+  "4": [
+    {
+      "id": 11,
+      "name": "Prospecting of Coal / Minerals"
+    }
+  ],
+  "75": [
+    {
+      "id": 181,
+      "name": "Grain based for EBP without ZLD"
+    },
+    {
+      "id": 180,
+      "name": "Grain based for EBP with ZLD"
+    }
+  ],
+  "38": [
+    {
+      "id": 134,
+      "name": "NA"
+    }
+  ],
+  "31": [
+    {
+      "id": 187,
+      "name": "Building and Construction project (>=20,000 <=1,50,000) BUA in Industrial estates/ parks/ complexes ( <500 Ha) and Not housing any industry belonging to Category A or B."
+    },
+    {
+      "id": 105,
+      "name": "Building and Construction project with BUA >1,50,000 sqm or covering an area of >50 Ha in Industrial estates/ parks/ complexes ( <500 Ha) and Not housing any industry belonging to Category A or B."
+    },
+    {
+      "id": 103,
+      "name": "Housing at least one Category A project/activity"
+    },
+    {
+      "id": 104,
+      "name": "Housing at least one Category B project/ activity"
+    }
+  ],
+  "46": [
+    {
+      "id": 154,
+      "name": "NA"
+    }
+  ],
+  "26": [
+    {
+      "id": 90,
+      "name": "NA"
+    }
+  ],
+  "22": [
+    {
+      "id": 68,
+      "name": "Other than Rayon"
+    },
+    {
+      "id": 67,
+      "name": "Rayon"
+    }
+  ],
+  "50": [
+    {
+      "id": 162,
+      "name": "NA"
+    }
+  ],
+  "10": [
+    {
+      "id": 34,
+      "name": "Primary Metallurgical Industry - All Projects"
+    },
+    {
+      "id": 41,
+      "name": "Recycling industrial units regd. under hazardous and other waste Rules (2016)  / E-Waste Mgmt. Rules (2016) / Battery Waste  Mgmt. Rules (2022)"
+    },
+    {
+      "id": 37,
+      "name": "Secondary Metallurgical  Industry involving of melting of  non-toxic metals using Solid / Liquid Fuel in the furnace"
+    },
+    {
+      "id": 38,
+      "name": "Secondary metallurgical  industry involving process of melting of  non-toxic metals using Electricity / Gas Fuel"
+    },
+    {
+      "id": 36,
+      "name": "Secondary Metallurgical  Industry  using Toxic Metals  (Arsenic,Mercury,Lead, Cadmium,  Chromium)"
+    },
+    {
+      "id": 40,
+      "name": "Secondary metallurgical  process involving only heating of non-toxic metals with pickling using  Electricity / Gas Fuel"
+    },
+    {
+      "id": 39,
+      "name": "Secondary metallurgical  process involving only heating of non-toxic metals with pickling using Solid / Liquid Fuel in the furnace"
+    },
+    {
+      "id": 32,
+      "name": "Sponge Iron Manufacturing Industry"
+    },
+    {
+      "id": 194,
+      "name": "Standalone rolling /  re-rolling / Extrusion / Piercing / Forging / Drawing units not involving any type of melting and / or pickling"
+    }
+  ],
+  "9": [
+    {
+      "id": 29,
+      "name": "NA"
+    }
+  ],
+  "76": [
+    {
+      "id": 185,
+      "name": "Off- Shore and Onshore Oil and Gas development and Production with or without exploration"
+    }
+  ],
+  "1": [
+    {
+      "id": 1,
+      "name": "Coal Mining - Opencast"
+    },
+    {
+      "id": 3,
+      "name": "Coal Mining - Opencast cum Underground"
+    },
+    {
+      "id": 2,
+      "name": "Coal Mining - Under ground"
+    },
+    {
+      "id": 242,
+      "name": "Non-Coal Mining (Critical and Strategic minerals)"
+    },
+    {
+      "id": 167,
+      "name": "Non-Coal Mining (Major Minerals)- Opencast"
+    },
+    {
+      "id": 169,
+      "name": "Non-Coal Mining (Major Minerals)- Opencast Cum Under ground"
+    },
+    {
+      "id": 168,
+      "name": "Non-Coal Mining (Major Minerals)- Under ground"
+    },
+    {
+      "id": 171,
+      "name": "Non-Coal Mining (Minor Minerals-other than river bed mining)"
+    },
+    {
+      "id": 170,
+      "name": "Non-Coal Mining (Minor Minerals- river bed mining)"
+    },
+    {
+      "id": 243,
+      "name": "Opencast Coking Coal (Critical & Strategic minerals)"
+    },
+    {
+      "id": 244,
+      "name": "Opencast-Cum-Underground Coking Coal  (Critical & Strategic minerals)"
+    },
+    {
+      "id": 245,
+      "name": "Underground Coking Coal (Critical & Strategic minerals)"
+    }
+  ],
+  "7": [
+    {
+      "id": 27,
+      "name": "Nuclear Power and processing of nuclear fuel projects"
+    },
+    {
+      "id": 25,
+      "name": "Nuclear Power projects"
+    },
+    {
+      "id": 26,
+      "name": "Processing of nuclear fuel"
+    }
+  ],
+  "3": [
+    {
+      "id": 10,
+      "name": "Off- Shore and Onshore Oil and Gas development and Production with or without exploration"
+    },
+    {
+      "id": 9,
+      "name": "Off- Shore and Onshore Oil and Gas exploration"
+    },
+    {
+      "id": 8,
+      "name": "Seismic survey for Oil and Gas exploration (On Shore / Off-shore)"
+    }
+  ],
+  "49": [
+    {
+      "id": 161,
+      "name": "NA"
+    }
+  ],
+  "48": [
+    {
+      "id": 157,
+      "name": "Desalination plant"
+    },
+    {
+      "id": 156,
+      "name": "Facility of Storage of Goods and Chemicals"
+    },
+    {
+      "id": 159,
+      "name": "Lighthouse"
+    },
+    {
+      "id": 160,
+      "name": "Other Structures"
+    },
+    {
+      "id": 158,
+      "name": "Sewage Treatment Plant"
+    }
+  ],
+  "51": [
+    {
+      "id": 163,
+      "name": "NA"
+    }
+  ],
+  "79": [
+    {
+      "id": 195,
+      "name": "All Standalone pellet plant"
+    }
+  ],
+  "20": [
+    {
+      "id": 65,
+      "name": "Pesticide intermediates"
+    },
+    {
+      "id": 64,
+      "name": "Technical grade pesticides"
+    }
+  ],
+  "21": [
+    {
+      "id": 66,
+      "name": "Industries based on the processing of petroleum fractions & natural gas and/or reforming to aromatics"
+    }
+  ],
+  "23": [
+    {
+      "id": 70,
+      "name": "Located in a notified industrial area"
+    },
+    {
+      "id": 69,
+      "name": "Located outside the notified industrial area"
+    }
+  ],
+  "12": [
+    {
+      "id": 45,
+      "name": "NA"
+    }
+  ],
+  "2": [
+    {
+      "id": 7,
+      "name": "Other pipelines"
+    },
+    {
+      "id": 6,
+      "name": "Pipeline used for Drinking water"
+    },
+    {
+      "id": 5,
+      "name": "Pipeline used for transportation of Oil and Gas"
+    }
+  ],
+  "35": [
+    {
+      "id": 116,
+      "name": "Capital dredging (inside or outside the port /  harbors / channels)"
+    },
+    {
+      "id": 114,
+      "name": "Cargo handling"
+    },
+    {
+      "id": 115,
+      "name": "Fish handling"
+    },
+    {
+      "id": 118,
+      "name": "Floating Jetty"
+    },
+    {
+      "id": 117,
+      "name": "Maintanance dredging (inside or outside the port /  harbors / channels)"
+    }
+  ],
+  "27": [
+    {
+      "id": 91,
+      "name": "Integrated Pulp & Paper manufacturing from virgin material"
+    },
+    {
+      "id": 179,
+      "name": "Integrated Pulp & Paper manufacturing from virgin material and waste paper including de inking"
+    },
+    {
+      "id": 92,
+      "name": "Integrated Pulp & Paper  manufacturing from waste paper pulp and other ready pulp"
+    },
+    {
+      "id": 95,
+      "name": "Standalone Paper manufacturing from waste paper pulp or other ready pulp with deinking/bleaching/colouring"
+    },
+    {
+      "id": 96,
+      "name": "Standalone Paper manufacturing from waste paper pulp or other ready pulp without deinking/bleaching/colouring"
+    },
+    {
+      "id": 93,
+      "name": "Standalone Pulp manufacturing from virgin material"
+    },
+    {
+      "id": 94,
+      "name": "Standalone Pulp manufacturing from waste paper"
+    }
+  ],
+  "41": [
+    {
+      "id": 149,
+      "name": "Metro Rail"
+    },
+    {
+      "id": 148,
+      "name": "Railway lines"
+    }
+  ],
+  "5": [
+    {
+      "id": 15,
+      "name": "Drinking water project"
+    },
+    {
+      "id": 13,
+      "name": "Irrigation Projects"
+    },
+    {
+      "id": 14,
+      "name": "Irrigation Projects involving interstate issues"
+    },
+    {
+      "id": 182,
+      "name": "Multi purpose  project with  Hydro Power Generation Component"
+    },
+    {
+      "id": 16,
+      "name": "Multi purpose  project with Irrigation and Hydro Power Generation Component"
+    },
+    {
+      "id": 184,
+      "name": "Multi purpose  project with Irrigation Component"
+    },
+    {
+      "id": 183,
+      "name": "Multi purpose  project without Irrigation and Hydro Power Generation"
+    },
+    {
+      "id": 190,
+      "name": "Pump Storage Projects (CAT-B2) meeting criteria of SO226 (E) dated on  18-05-2023"
+    },
+    {
+      "id": 12,
+      "name": "RVHEPs without Pump Storage Projects"
+    },
+    {
+      "id": 188,
+      "name": "RVHEPs with Pump Storage Projects"
+    },
+    {
+      "id": 189,
+      "name": "Standalone Pump Storage Projects"
+    }
+  ],
+  "36": [
+    {
+      "id": 132,
+      "name": "All Highway projects  upto 100 km from line of control/border"
+    },
+    {
+      "id": 131,
+      "name": "Approach Road / Approach acess / Others"
+    },
+    {
+      "id": 130,
+      "name": "Arterial Roads/  Sub- Arterial Roads / Collector Streets / Local Streets"
+    },
+    {
+      "id": 121,
+      "name": "Expansion of National Highways/expressways involving additional right of way or land acquisition greater than 40 m on existing alignment and 60 m on re-alignment"
+    },
+    {
+      "id": 122,
+      "name": "Expansion of National Highways/expressways involving additional right of way or land acquisition less than 40 m on existing alignment and 60 m on re-alignment"
+    },
+    {
+      "id": 123,
+      "name": "Expansion of State highway/Expressway in hilly area above 1000 m AMSL"
+    },
+    {
+      "id": 124,
+      "name": "Expansion of State highway/Expressway in hilly area below 1000 m AMSL"
+    },
+    {
+      "id": 126,
+      "name": "Expansion of State highway/expressway not passing through ecollogically sensitive areas"
+    },
+    {
+      "id": 125,
+      "name": "Expansion of State highway/expressway passing through ecollogically sensitive areas"
+    },
+    {
+      "id": 127,
+      "name": "Major District Road (New/Expansion)"
+    },
+    {
+      "id": 119,
+      "name": "New National Highway/Experessway"
+    },
+    {
+      "id": 120,
+      "name": "New State Highway/expressway"
+    },
+    {
+      "id": 128,
+      "name": "Other District Road (New/Expansion)"
+    },
+    {
+      "id": 129,
+      "name": "Village Road (New/Expansion)"
+    }
+  ],
+  "30": [
+    {
+      "id": 101,
+      "name": "Ship Breaking Units"
+    },
+    {
+      "id": 102,
+      "name": "Ship Breaking Yards"
+    }
+  ],
+  "18": [
+    {
+      "id": 55,
+      "name": "Processing of Skin/Hide (Located outside the notified Industrial Area)"
+    },
+    {
+      "id": 56,
+      "name": "Processing of Skin/Hide (Located Within the notified Industrial Area)"
+    },
+    {
+      "id": 53,
+      "name": "Tanning (Located outside the notified Industrial Area)"
+    },
+    {
+      "id": 54,
+      "name": "Tanning (Located Within the notified Industrial Area)"
+    }
+  ],
+  "77": [
+    {
+      "id": 191,
+      "name": "Slurry pipeline used for transportation of coal /lignite"
+    },
+    {
+      "id": 192,
+      "name": "Slurry pipeline used for transportation of ores /Mineral"
+    }
+  ],
+  "17": [
+    {
+      "id": 52,
+      "name": "NA"
+    }
+  ],
+  "45": [
+    {
+      "id": 153,
+      "name": "NA"
+    }
+  ],
+  "28": [
+    {
+      "id": 176,
+      "name": "Expansion of Sugar Industry for EBP"
+    },
+    {
+      "id": 177,
+      "name": "Expansion of Sugar Industry for Molasses based ethanol production under EBP"
+    },
+    {
+      "id": 178,
+      "name": "Expansion of Sugar Industry for Non Molasses based ethanol production under EBP"
+    },
+    {
+      "id": 97,
+      "name": "Sugar Production"
+    }
+  ],
+  "24": [
+    {
+      "id": 76,
+      "name": "Active Pharmaceuticals Ingredients (located outside the notified industrial area)"
+    },
+    {
+      "id": 75,
+      "name": "Active Pharmaceuticals Ingredients (located within the notified industrial area)"
+    },
+    {
+      "id": 79,
+      "name": "Basic organic chemicals (located outside notified industrial area)"
+    },
+    {
+      "id": 80,
+      "name": "Basic organic chemicals (located within the notified industrial area)"
+    },
+    {
+      "id": 73,
+      "name": "Bulk drugs and intermediates (located outside the notified industrial area)"
+    },
+    {
+      "id": 74,
+      "name": "Bulk drugs and intermediates  (located within notified industrial area)"
+    },
+    {
+      "id": 71,
+      "name": "Dyes & dye intermediates (loacted outside the notified industrial area)"
+    },
+    {
+      "id": 72,
+      "name": "Dyes & dye intermediates (located within the notified industrial area)"
+    },
+    {
+      "id": 81,
+      "name": "Other synthetic organic chemicals and chemical intermediates (located outside notified industrial area)"
+    },
+    {
+      "id": 82,
+      "name": "Other synthetic organic chemicals and chemical intermediates (located within notified industrial area)"
+    },
+    {
+      "id": 77,
+      "name": "Synthetic rubbers (Located outside the notified industrial area)"
+    },
+    {
+      "id": 78,
+      "name": "Synthetic rubbers (Located within the notified industrial area)"
+    }
+  ],
+  "6": [
+    {
+      "id": 22,
+      "name": "Biomass using auxiliary fuel such as coal/lignite/petroleum products more than 15%"
+    },
+    {
+      "id": 20,
+      "name": "Biomass using auxiliary fuel such as coal/lignite/petroleum products upto 15%"
+    },
+    {
+      "id": 17,
+      "name": "Coal/Lignite based plants"
+    },
+    {
+      "id": 21,
+      "name": "Municipal Solid (non-hazardous) Waste using auxiliary fuel such as Coal/Lignite/Petroleum products more than 15%"
+    },
+    {
+      "id": 19,
+      "name": "Municipal solid (non-hazardous) waste using auxiliary fuel such as coal/lignite/petroleum products upto 15%"
+    },
+    {
+      "id": 18,
+      "name": "Naphtha/ Gas based plants"
+    },
+    {
+      "id": 24,
+      "name": "Other fuels"
+    },
+    {
+      "id": 23,
+      "name": "Waste heat boilers without any auxiliary fuel"
+    }
+  ],
+  "40": [
+    {
+      "id": 146,
+      "name": "Area Development"
+    },
+    {
+      "id": 147,
+      "name": "Rehabilitation Centres"
+    },
+    {
+      "id": 145,
+      "name": "Townships"
+    }
+  ],
+  "43": [
+    {
+      "id": 151,
+      "name": "NA"
+    }
+  ],
+  "44": [
+    {
+      "id": 152,
+      "name": "NA"
+    }
+  ]
+}

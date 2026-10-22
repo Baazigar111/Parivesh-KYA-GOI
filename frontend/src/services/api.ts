@@ -11,6 +11,7 @@ import {
   ClearanceResponse,
 } from "../types/clearance";
 import defaultActivities from "../data/activities.json";
+import defaultSubactivities from "../data/subactivities.json";
 
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
@@ -38,6 +39,8 @@ export async function fetchMasterActivities(): Promise<MasterActivity[]> {
 export async function fetchSubActivities(
   activityId: number
 ): Promise<MasterSubActivity[]> {
+  const localCatalog = (defaultSubactivities as Record<string, MasterSubActivity[]>)[String(activityId)];
+
   try {
     const res = await fetch(
       `${API_BASE_URL}/api/v1/subactivities?activity_id=${activityId}`,
@@ -46,14 +49,21 @@ export async function fetchSubActivities(
         headers: { "Content-Type": "application/json" },
       }
     );
-    if (!res.ok) {
-      throw new Error(`Failed to fetch sub-activities: HTTP ${res.status}`);
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        return data;
+      }
     }
-    return await res.json();
   } catch (err) {
-    console.warn(`Sub-activities request failed for activity ${activityId}:`, err);
-    return [];
+    console.warn(`Sub-activities request failed for activity ${activityId}, using cached catalog:`, err);
   }
+
+  if (localCatalog && localCatalog.length > 0) {
+    return localCatalog;
+  }
+
+  return [{ id: 0, name: "General / All Categories" }];
 }
 
 export async function evaluateClearances(
