@@ -126,7 +126,7 @@ npm install
 #### C. Configure Local Environment:
 Ensure `frontend/.env.local` contains:
 ```env
-NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+API_URL=http://127.0.0.1:8000
 ```
 
 #### D. Start Next.js Development Server:
@@ -158,7 +158,7 @@ https://<random-name>.trycloudflare.com
 
 ### 2. Update Vercel Environment Variable
 1. Go to **Vercel Dashboard > parivesh-kya-goi > Settings > Environment Variables**.
-2. Set `NEXT_PUBLIC_API_URL` to `https://<random-name>.trycloudflare.com`.
+2. Set `API_URL` to `https://<random-name>.trycloudflare.com`.
 3. Go to **Deployments** and click **Redeploy**.
 
 ---

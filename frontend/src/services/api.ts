@@ -24,7 +24,8 @@ function cleanApiBase(url?: string): string {
   return cleaned;
 }
 
-const API_BASE_URL = cleanApiBase(process.env.NEXT_PUBLIC_API_URL);
+// Accepts API_URL or NEXT_PUBLIC_API_URL
+const API_BASE_URL = cleanApiBase(process.env.API_URL || process.env.NEXT_PUBLIC_API_URL);
 
 export async function fetchMasterActivities(): Promise<MasterActivity[]> {
   try {
