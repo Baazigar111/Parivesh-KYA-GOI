@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  parivesh-kya-backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: parivesh-kya-backend
+    restart: always
+    ports:
+      - "80:8000"
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - UPSTASH_REDIS_REST_URL=https://tough-cricket-123184.upstash.io
+      - UPSTASH_REDIS_REST_TOKEN=${UPSTASH_REDIS_REST_TOKEN:-}
+    deploy:
+      resources:
+        limits:
+          memory: 2048M
