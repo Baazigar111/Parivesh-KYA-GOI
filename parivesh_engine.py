@@ -386,6 +386,7 @@ def run_full_automated_lookup(
         with open(temp_kml_path, "wb") as f:
             f.write(kml_bytes)
 
+    with sync_playwright() as p:
         browser = p.chromium.launch(
             headless=True,
             args=["--disable-web-security", "--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]
