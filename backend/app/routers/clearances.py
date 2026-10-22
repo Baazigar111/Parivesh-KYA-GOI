@@ -2,6 +2,7 @@
 clearances.py
 -------------
 Router for clearance evaluation and Camunda DMN decision execution.
+Supports both /api/v1/clearances and /api/clearances for universal compatibility.
 """
 
 import logging
@@ -18,10 +19,13 @@ from ..cache import cache
 
 logger = logging.getLogger(__name__)
 
-router = APIRouter(prefix="/api/v1", tags=["Clearances & DMN"])
+router = APIRouter(tags=["Clearances & DMN"])
 
 
-@router.post("/clearances", response_model=ClearanceResponse, summary="Evaluate Project Clearances")
+@router.post("/api/v1/clearances", response_model=ClearanceResponse, summary="Evaluate Project Clearances")
+@router.post("/api/clearances", response_model=ClearanceResponse, summary="Evaluate Project Clearances (Direct)")
+@router.post("/api/v1/clearances/", include_in_schema=False)
+@router.post("/api/clearances/", include_in_schema=False)
 def evaluate_project_clearances(request: ClearanceRequest):
     """
     Evaluates tentative environmental, forest, wildlife, and CRZ clearances.
@@ -39,7 +43,10 @@ def evaluate_project_clearances(request: ClearanceRequest):
         raise HTTPException(status_code=500, detail=f"Clearance evaluation failed: {str(e)}")
 
 
-@router.post("/evaluate-dmn", response_model=DMNEvaluateResponse, summary="Direct Camunda DMN Evaluate")
+@router.post("/api/v1/evaluate-dmn", response_model=DMNEvaluateResponse, summary="Direct Camunda DMN Evaluate")
+@router.post("/api/evaluate-dmn", response_model=DMNEvaluateResponse, summary="Direct Camunda DMN Evaluate (Direct)")
+@router.post("/api/v1/evaluate-dmn/", include_in_schema=False)
+@router.post("/api/evaluate-dmn/", include_in_schema=False)
 def evaluate_dmn_directly(request: DMNEvaluateRequest):
     """
     Directly evaluates a Camunda DMN decision table matching:
@@ -57,7 +64,8 @@ def evaluate_dmn_directly(request: DMNEvaluateRequest):
         raise HTTPException(status_code=500, detail=f"DMN evaluation error: {str(e)}")
 
 
-@router.post("/cache/clear", summary="Clear Redis Cache")
+@router.post("/api/v1/cache/clear", summary="Clear Redis Cache")
+@router.post("/api/cache/clear", summary="Clear Redis Cache (Direct)")
 def clear_application_cache():
     """Administrative utility to clear Redis/in-memory cache."""
     try:

@@ -13,8 +13,18 @@ import {
 import defaultActivities from "../data/activities.json";
 import defaultSubactivities from "../data/subactivities.json";
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+function cleanApiBase(url?: string): string {
+  if (!url) return "http://127.0.0.1:8000";
+  let cleaned = url.trim();
+  // Strip trailing slashes
+  cleaned = cleaned.replace(/\/+$/, "");
+  // If the user appended /api/v1 or /api to NEXT_PUBLIC_API_URL, strip it so we don't double up
+  cleaned = cleaned.replace(/\/api\/v1$/, "");
+  cleaned = cleaned.replace(/\/api$/, "");
+  return cleaned;
+}
+
+const API_BASE_URL = cleanApiBase(process.env.NEXT_PUBLIC_API_URL);
 
 export async function fetchMasterActivities(): Promise<MasterActivity[]> {
   try {
@@ -23,12 +33,11 @@ export async function fetchMasterActivities(): Promise<MasterActivity[]> {
       headers: { "Content-Type": "application/json" },
       cache: "default",
     });
-    if (!res.ok) {
-      throw new Error(`Failed to fetch activities: HTTP ${res.status}`);
-    }
-    const data = await res.json();
-    if (Array.isArray(data) && data.length > 0) {
-      return data;
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        return data;
+      }
     }
   } catch (err) {
     console.warn("FastAPI activities request failed, using complete 56-sector catalog:", err);
@@ -69,22 +78,42 @@ export async function fetchSubActivities(
 export async function evaluateClearances(
   payload: ClearanceRequestPayload
 ): Promise<ClearanceResponse> {
-  const res = await fetch(`${API_BASE_URL}/api/v1/clearances`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
+  const endpoints = [
+    `${API_BASE_URL}/api/v1/clearances`,
+    `${API_BASE_URL}/api/clearances`,
+  ];
 
-  if (!res.ok) {
-    const errorText = await res.text();
-    throw new Error(
-      `Evaluation failed (HTTP ${res.status}): ${errorText || res.statusText}`
-    );
+  let lastRes: Response | null = null;
+  let lastErrorText = "";
+
+  for (const url of endpoints) {
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        return await res.json();
+      }
+
+      lastRes = res;
+      lastErrorText = await res.text();
+      // If not a 404, break out and show the actual error
+      if (res.status !== 404) {
+        break;
+      }
+    } catch (err: any) {
+      lastErrorText = err.message || String(err);
+    }
   }
 
-  return await res.json();
+  throw new Error(
+    `Evaluation failed (HTTP ${lastRes?.status || "ERR"}): ${lastErrorText || lastRes?.statusText || "Could not reach backend service"}`
+  );
 }
 
 export async function checkBackendHealth(): Promise<{
@@ -92,15 +121,22 @@ export async function checkBackendHealth(): Promise<{
   cache_driver?: string;
   version?: string;
 }> {
-  try {
-    const res = await fetch(`${API_BASE_URL}/api/v1/health`, {
-      method: "GET",
-    });
-    if (res.ok) {
-      return await res.json();
+  const healthEndpoints = [
+    `${API_BASE_URL}/api/v1/health`,
+    `${API_BASE_URL}/api/health`,
+    `${API_BASE_URL}/health`,
+    `${API_BASE_URL}/`
+  ];
+
+  for (const url of healthEndpoints) {
+    try {
+      const res = await fetch(url, { method: "GET" });
+      if (res.ok) {
+        return await res.json();
+      }
+    } catch {
+      // try next health endpoint
     }
-  } catch {
-    // Backend offline or loading
   }
   return { status: "disconnected" };
 }

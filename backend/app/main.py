@@ -2,7 +2,7 @@
 main.py
 -------
 FastAPI Application Entry Point for PARIVESH 2.0 KYA Backend Service.
-Decoupled, high-performance architecture built for AWS ECS, Google Cloud Run, or VPS.
+Decoupled, high-performance architecture built for AWS ECS, Google Cloud Run, Render, or VPS.
 """
 
 import os
@@ -30,10 +30,10 @@ app = FastAPI(
     redoc_url="/redoc",
 )
 
-# ── CORS Middleware ───────────────────────────────────────────────────────────
+# ── CORS Middleware (Permissive for Vercel, localhost, and custom domains) ────
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For Next.js on Vercel and local dev
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -51,24 +51,18 @@ if os.path.exists(debug_dir):
 
 # ── Health & Diagnostics ──────────────────────────────────────────────────────
 @app.get("/", tags=["Health"])
-def root_redirect():
-    return {
-        "service": settings.APP_NAME,
-        "status": "online",
-        "version": settings.APP_VERSION,
-        "docs": "/docs",
-        "cache": cache.status()
-    }
-
-
+@app.get("/health", tags=["Health"])
+@app.get("/api/health", tags=["Health"])
 @app.get("/api/v1/health", tags=["Health"])
 def health_check():
-    """Returns system status and cache health."""
+    """Returns system status and cache health across all standard health endpoints."""
     return {
         "status": "healthy",
+        "service": settings.APP_NAME,
         "cache_driver": cache.client_type,
         "cache_connected": True,
-        "version": settings.APP_VERSION
+        "version": settings.APP_VERSION,
+        "docs": "/docs"
     }
 
 
