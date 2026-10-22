@@ -5,7 +5,8 @@ WORKDIR /app
 
 ENV PYTHONUNBUFFERED=1 \
     PORT=8000 \
-    HOST=0.0.0.0
+    HOST=0.0.0.0 \
+    PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -15,11 +16,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python requirements and ensure exact matching browser binary is present
+# Install Python requirements (Playwright 1.40.0 is pinned to match the base image)
 COPY backend/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt && \
-    playwright install chromium
+    pip install --no-cache-dir -r requirements.txt
 
 # Copy application files
 COPY . /app
