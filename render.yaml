@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: parivesh-kya-assistant
-    runtime: docker
-    plan: starter
-    region: singapore
-    envVars:
-      - key: PYTHONUNBUFFERED
-        value: "1"

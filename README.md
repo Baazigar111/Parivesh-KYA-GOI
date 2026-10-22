@@ -1,117 +1,162 @@
-# 🌿 PARIVESH 2.0 KYA Clearance Assistant
+# 🌿 PARIVESH 2.0 KYA Enterprise Clearance Intelligence Suite
 
-An executive-grade web application and automation console built with **Streamlit** and **Playwright** to query and evaluate Tentative Clearances (Environmental, Forest, Wildlife, and CRZ) from the Ministry of Environment, Forest and Climate Change (MoEFCC) **PARIVESH 2.0 KYA (Know Your Approvals)** portal.
+An executive-grade, decoupled production stack with **FastAPI Backend** and a high-performance **Next.js (React) Frontend** ready for deployment on **Vercel** and **AWS ECS / Google Cloud Run / VPS**.
+
+Evaluates tentative clearances (Environmental, Forest, Wildlife, and Coastal Regulation Zone) from the Ministry of Environment, Forest and Climate Change (MoEFCC) **PARIVESH 2.0 KYA (Know Your Approvals)** portal.
+
+---
+
+## 🏛️ Enterprise Decoupled Architecture
+
+```mermaid
+flowchart LR
+    subgraph Frontend_Tier ["Frontend (Vercel)"]
+        FE["Next.js 16 Web App\n(React 19, TypeScript, Glassmorphism)"]
+    end
+
+    subgraph Backend_Tier ["Backend API (Cloud Run / ECS / VPS)"]
+        API["FastAPI REST Service\n(/api/v1/clearances, /api/v1/activities)"]
+        DMN["Camunda DMN Evaluator\n(/engine-rest/decision-definition/key/*/evaluate)"]
+        ENGINE["Playwright Headless Automation & Canvas CAPTCHA Engine"]
+    end
+
+    subgraph Storage_Cache ["Cache Tier"]
+        CACHE[("Redis / Upstash\n(TTL: 24h Master, 1h Clearances)")]
+    end
+
+    FE -->|JSON REST API| API
+    API <--> CACHE
+    API --> DMN
+    API --> ENGINE
+```
 
 ---
 
 ## 🚀 Key Features
 
-- **Executive Glassmorphism UI:** Modern dark-mode console with custom typography (*Plus Jakarta Sans* & *Inter*), responsive glowing status badges, and 4-metric KPI summary cards.
-- **Automated KYA Evaluation:** Automates project activity selection, sub-activity classification, capacity input, and location submission on `parivesh.nic.in/kya/#/`.
-- **Dual Location Modes:**
-  - **Point Location:** Provide custom Latitude and Longitude coordinates.
-  - **Upload KML:** Upload any project boundary `.kml` polygon file.
-- **Zero-Click CAPTCHA Engine:** Fully automatic recognition using **`ddddocr`** (~95% accuracy) backed by a local ONNX CNN fallback model (`captcha_model.onnx`).
-- **Camunda DMN Network Intercept:** Intercepts the portal's background `/evaluate` decision payload to guarantee 100% complete, un-truncated legal remarks and official applicability status.
-- **Comprehensive Clearance Intelligence:**
-  - Full Tentative Clearances card across all 4 pillars (Environmental, Forest, Wildlife, CRZ) with glowing applicability badges.
-  - Toposheet Number & hierarchical administrative location tables (State, District, Village).
-  - Proximity spatial layers to eco-sensitive zones and water bodies.
-  - One-click export to CSV and JSON formats.
+- **Decoupled Modern Stack:** Zero heavy browser dependencies on the frontend; instant global CDN edge delivery on **Vercel**.
+- **FastAPI Backend Service:** High-throughput async REST endpoints (`/api/v1/clearances`, `/api/v1/activities`, `/api/v1/subactivities`, `/api/v1/evaluate-dmn`).
+- **Zero-Click CAPTCHA Engine:** Intercepts case-sensitive CAPTCHA via canvas prototype hooks backed by dual-engine ONNX CNN recognition.
+- **Camunda DMN Decision Table Evaluation:** Direct compatibility with Camunda BPM REST schema for 100% complete, un-truncated legal remarks and statutory citations.
+- **Unified Redis / Upstash Caching:** Sub-50ms dropdown rendering for master sectors and 1-hour deduplication cache for identical queries.
+- **Executive Glassmorphism Console:**
+  - 4-metric KPI Stat Strip (Total Pillars, Applicable count, Exempt count, Toposheet Sheet No.).
+  - Tentative Clearances table with glowing applicability status badges.
+  - Administrative Hierarchy Breakdown (State, District, Village).
+  - Proximity buffer metrics to protected areas and waterbodies.
+  - Instant CSV and JSON report export.
 
 ---
 
-## 📁 Project Structure
+## 📁 Repository Structure
 
 ```text
 parivesh_scrap/
 │
-├── app.py                      # Thin Streamlit UI controller (~180 lines)
-├── parivesh_engine.py          # Playwright automation, Camunda DMN intercept & extraction engine
-├── parivesh_api.py             # API client and local caching for master activities
-├── ui_components.py            # Glassmorphism CSS design system & custom HTML table cards
-├── captcha_solver.py           # Dual-engine CAPTCHA solver (ddddocr + ONNX CNN fallback)
-├── captcha_model.onnx          # Neural network model architecture
-├── captcha_model.onnx.data     # Model weights for ONNX fallback solver
-├── parivesh_activities.json    # Local activities cache for instant dropdown loading
-├── start_app_with_tunnel.bat   # 1-click launcher for Streamlit + Cloudflare Tunnel
-├── requirements.txt            # Python dependencies for production deployment
-├── Dockerfile                  # Container definition based on official Playwright Linux image
-├── render.yaml                 # Blueprint configuration for cloud deployments
-├── .dockerignore               # Docker build exclusions
-├── .gitignore                  # Git exclusions (venv, cache, temporary files)
-└── README.md                   # Project documentation
+├── backend/                        # FastAPI REST API Service
+│   ├── app/
+│   │   ├── main.py                 # FastAPI app & CORS middleware
+│   │   ├── config.py               # Settings (Redis, Upstash, ports)
+│   │   ├── cache.py                # Unified Redis / Upstash / Memory cache
+│   │   ├── schemas/                # Pydantic request/response models
+│   │   ├── services/               # Clearance & DMN evaluation services
+│   │   └── routers/                # REST API routers (/clearances, /activities)
+│   ├── Dockerfile                  # Production container for Cloud Run / ECS
+│   ├── requirements.txt            # FastAPI & Playwright dependencies
+│   └── run.py                      # Local development runner
+│
+├── frontend/                       # Next.js 16 Client Portal (Vercel Ready)
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── page.tsx            # Executive intelligence dashboard
+│   │   │   ├── layout.tsx          # Root layout & Google typography
+│   │   │   └── globals.css         # Glassmorphism design system
+│   │   ├── services/api.ts         # Backend API client with fallbacks
+│   │   └── types/clearance.ts      # TypeScript interfaces
+│   ├── vercel.json                 # Vercel deployment configuration
+│   └── package.json                # Next.js & React 19 dependencies
+│
+├── parivesh_engine.py              # Core headless Chromium automation & DMN intercept
+├── captcha_solver.py               # Dual-engine CAPTCHA solver (ONNX + ddddocr)
+├── parivesh_activities.json        # Seed catalog for 56 industrial sectors
+├── start_fastapi_and_nextjs.bat    # 1-Click launcher for both services
+└── start_backend.bat               # 1-Click launcher for FastAPI standalone
 ```
 
 ---
 
-## 🛠️ Prerequisites & Installation
+## 🏃 Quick Start (Local Development)
 
-### 1. Requirements
-- **Python:** 3.10 or higher
-- **Google Chrome / Chromium:** Managed automatically via Playwright
-
-### 2. Setup Virtual Environment
-If cloning or setting up on a new machine:
-```bash
-# Create virtual environment
-python -m venv venv
-
-# Activate virtual environment (Windows PowerShell)
-.\venv\Scripts\Activate.ps1
-```
-
-### 3. Install Required Packages
-```bash
-pip install -r requirements.txt
-playwright install chromium
-```
+### Option 1: 1-Click Launch (Recommended)
+Double-click **`start_fastapi_and_nextjs.bat`**.
+This will:
+1. Launch FastAPI on `http://127.0.0.1:8000` (Interactive Docs: `http://127.0.0.1:8000/docs`).
+2. Launch Next.js on `http://localhost:3000`.
+3. Open your browser automatically.
 
 ---
 
-## 🏃 Running the Application
+### Option 2: Manual Terminal Execution
 
-### Option A: 1-Click Launch with Cloudflare Tunnel (Recommended)
-Because `parivesh.nic.in` is an Indian Government portal protected by Geo-Firewalls, running the app locally through your Indian internet connection guarantees unblocked access, while Cloudflare provides a public HTTPS URL accessible from anywhere:
-
-1. Double-click **`start_app_with_tunnel.bat`**.
-2. The script will automatically launch Streamlit and output a secure public URL (e.g. `https://your-tunnel-name.trycloudflare.com`).
-
----
-
-### Option B: Local Streamlit Execution
+#### 1. Start the FastAPI Backend:
 ```powershell
 .\venv\Scripts\Activate.ps1
-streamlit run app.py
-```
-Open your browser at `http://localhost:8501`.
-
----
-
-### Option C: Docker Container Deployment
-Build and run the containerized application:
-```bash
-docker build -t parivesh-kya-assistant .
-docker run -p 10000:10000 parivesh-kya-assistant
+python backend/run.py
 ```
 
----
-
-## 📖 How to Use
-
-1. **Project Specifications:** Select the relevant industry/activity and sub-activity from the dropdowns, then specify the project extent/capacity.
-2. **Geospatial Location:**
-   - Choose **Point Location** and enter Latitude & Longitude, OR
-   - Choose **Upload KML** and upload a project `.kml` boundary.
-3. **Click "EVALUATE TENTATIVE CLEARANCES":**
-   - The system launches headless Chromium, fills form parameters, solves the CAPTCHA automatically, and evaluates clearance requirements via Camunda DMN.
-4. **Review Report:**
-   - Review the **KPI Stat Strip** (Total Clearances, Applicable count, Exempt count, Toposheet).
-   - Inspect the **Tentative Clearances Summary** card with official applicability badges and un-truncated legal remarks.
-   - View the hierarchical State/District/Village location breakdown and proximity buffer tables.
-   - Download the full report as CSV or JSON.
+#### 2. Start the Next.js Frontend:
+```powershell
+cd frontend
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## ⚖️ License & Disclaimer
-This tool is designed for research, environmental compliance analysis, and educational purposes to interact with public government environmental approval portals. Ensure compliance with PARIVESH portal terms of service when utilizing automated queries.
+## ☁️ Production Deployment Guide
+
+### A. Deploy Backend to Google Cloud Run or AWS ECS
+1. Build the container from `backend/Dockerfile`:
+   ```bash
+   docker build -f backend/Dockerfile -t parivesh-backend:latest .
+   ```
+2. Set Environment Variables:
+   - `UPSTASH_REDIS_REST_URL`: Your Upstash Redis REST URL (optional)
+   - `UPSTASH_REDIS_REST_TOKEN`: Your Upstash Redis REST Token (optional)
+   - `PORT`: `8000`
+3. Deploy to Cloud Run:
+   ```bash
+   gcloud run deploy parivesh-kya-backend \
+     --image gcr.io/YOUR_PROJECT/parivesh-backend:latest \
+     --platform managed \
+     --region asia-south1 \
+     --allow-unauthenticated
+   ```
+
+### B. Deploy Frontend to Vercel
+1. Link the `frontend/` directory to Vercel:
+   ```bash
+   cd frontend
+   vercel
+   ```
+2. Set Environment Variable in Vercel Project Settings:
+   - `NEXT_PUBLIC_API_URL`: Your deployed FastAPI backend URL (e.g. `https://parivesh-kya-backend-xyz.a.run.app`)
+3. Deploy to production:
+   ```bash
+   vercel --prod
+   ```
+
+---
+
+## 📖 API Endpoints Reference
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/api/v1/health` | System health and cache driver status |
+| `GET` | `/api/v1/activities` | Master list of all industrial sectors (cached) |
+| `GET` | `/api/v1/subactivities?activity_id={id}` | Sub-activities for specific sector (cached) |
+| `POST` | `/api/v1/clearances` | Full tentative clearance evaluation |
+| `POST` | `/api/v1/evaluate-dmn` | Direct Camunda DMN decision evaluation |
+| `POST` | `/api/v1/cache/clear` | Invalidate Redis/in-memory cache |
+
+Interactive Swagger documentation is available at `http://localhost:8000/docs`.
