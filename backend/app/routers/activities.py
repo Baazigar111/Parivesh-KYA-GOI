@@ -7,7 +7,11 @@ Supports both /api/v1/ and /api/ paths.
 
 from typing import List, Dict, Any
 from fastapi import APIRouter, Query, HTTPException
-from ..services.activities_service import get_master_activities, get_subactivities_by_id
+from ..services.activities_service import (
+    get_master_activities,
+    get_subactivities_by_id,
+    get_threshold_units_catalog,
+)
 
 router = APIRouter(tags=["Master Data"])
 
@@ -33,8 +37,19 @@ def list_activities():
 @router.get("/api/subactivities/", include_in_schema=False)
 def list_subactivities(activity_id: int = Query(..., description="ID of the parent activity")):
     """
-    Returns the sub-activities corresponding to an activity ID.
-    Cached individually per activity ID.
+    Returns the sub-activities corresponding to an activity ID,
+    enriched with their official statutory unit and parameter name.
     """
     subactivities = get_subactivities_by_id(activity_id)
     return subactivities
+
+
+@router.get("/api/v1/threshold-units", response_model=Dict[str, Any], summary="Get Official Statutory Threshold Units Catalog")
+@router.get("/api/threshold-units", response_model=Dict[str, Any], summary="Get Official Statutory Threshold Units Catalog (Direct)")
+def get_threshold_units():
+    """
+    Returns the official statutory threshold units catalog mapped across 187 subactivities and 56 sectors.
+    """
+    catalog = get_threshold_units_catalog()
+    return catalog
+

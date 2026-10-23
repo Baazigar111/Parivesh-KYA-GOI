@@ -97,6 +97,16 @@ def execute_clearance_evaluation(req: ClearanceRequest) -> ClearanceResponse:
             kml_bytes = req.kml_content.encode("utf-8")
 
     from parivesh_engine import run_full_automated_lookup
+    from .activities_service import resolve_statutory_unit
+
+    threshold_meta = resolve_statutory_unit(
+        subactivity_id=req.subactivity_id,
+        subactivity_name=req.subactivity_name,
+        activity_id=req.activity_id
+    )
+    resolved_unit = threshold_meta.get("unit") or req.capacity_unit or "sqmtr"
+    resolved_param = threshold_meta.get("param") or "Project Capacity/Extent"
+    req.capacity_unit = resolved_unit
 
     status_tracker = FastAPILoggerStatus()
     raw_results = run_full_automated_lookup(
@@ -144,6 +154,17 @@ def execute_clearance_evaluation(req: ClearanceRequest) -> ClearanceResponse:
             )
         )
 
+    # Ensure project data includes resolved statutory parameters
+    project_data = dict(raw_results.get("project", {}))
+    if not project_data:
+        project_data = {
+            "Project / Activity": req.activity_name,
+            "Sub Activity": req.subactivity_name,
+            "Project Capacity / Extent": f"{req.capacity} {resolved_unit}".strip()
+        }
+    project_data["Statutory Unit"] = resolved_unit
+    project_data["Statutory Parameter"] = resolved_param
+
     response = ClearanceResponse(
         success=True,
         message="Clearance evaluation completed successfully.",
@@ -153,7 +174,7 @@ def execute_clearance_evaluation(req: ClearanceRequest) -> ClearanceResponse:
         toposheet=raw_results.get("toposheet", ""),
         administrative=admin_items,
         proximity=raw_results.get("proximity", []),
-        project=raw_results.get("project", {}),
+        project=project_data,
         map_png_url="/debug/parivesh_map_view.png" if raw_results.get("map_png") else None
     )
 
